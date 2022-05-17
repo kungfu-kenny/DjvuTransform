@@ -30,7 +30,7 @@ def develop_file_transform():
         path = os.path.join(Folder.input, files)
         if os.path.splitext(files)[1].lower()=='.djvu':
             time_start = time.time()
-            path_output = os.path.join(Folder.output, os.path.splitext(files)[0])
+            path_output = os.path.join(Folder.output, f"{os.path.splitext(files)[0]}.pdf")
             call(f'ddjvu -format=pdf "{path}" "{path_output}"', shell=True)
             print('--------------------------------------------------------------------------------')
             print('Finished:', files, '\nIt took time:', round(time.time()-time_start, 2), 'seconds')
